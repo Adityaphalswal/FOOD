@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Landing Page Layout with Food Themed Illustrations</title>
+    <link rel="stylesheet" href="./dist/css/main.css">
+</head>
+<body>
+    <header>
+        <div class="nav-logo">FOOD</div>
+            <div class="menu" id="menu"><svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="#000"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div>
+        <nav  id="navbar" class="navbar">
+            <div class="menuclose" id="menuclose"><svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="#000"><path d="M0 0h24v24H0z" fill="none"></path><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></div>
+            <ul >
+                <li><a class="active" href="/index.html">Home</a></li>
+                <li><a href="#sfds.html">Features</a></li>
+                <li><a href="#Features">About us</a></li>
+                <li><a href="#Features">Fees</a></li>
+                <li><a href="#Features">Contact us</a></li>
+            </ul>
+            <div class="buttons">
+                <form action="" class="form">
+                <input type="search" id="search" name="lname">
+                <button type="submit" class="search">
+                    <svg width="32" height="32"viewBox="0 0 24 24" fill="white" color="#000"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                </button>
+                </form>
+                <button class="createaccount">create account</button>
+            </div>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Order fresh food at your doorsteps.</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus eum, voluptatem quia obcaecati sit illo nam dicta temporibus fugiat pariatur reprehenderit nulla ab. Voluptatibus earum fugiat unde ducimus, doloremque aspernatur?</p>
+        <div class="herobuttons">
+            <button class="ordernow">Order Now</button>
+            <button class="downloadapp">Download App</button>
+        </div>
+        <img src="./assets/Asset 1.svg" alt="">
+    </section>
+    <script>
+        let menu = document.getElementById('menu');
+        let menuclose = document.getElementById('menuclose');
+        let nav = document.querySelector('.navbar');
+        let form = document.querySelector('.form');
+        let search = document.getElementById('search')
+        let submit = document.querySelector('.search')
+
+        search.addEventListener('click',() =>{
+            // submit.style.display = "flex";
+            submit.classList.toggle('.showbutton')
+        })
+    menu.addEventListener('click', () =>{
+        nav.classList.add('show');
+       })
+       menuclose.addEventListener('click',() =>{
+        nav.classList.toggle('show');
+    })
+       
+    </script>
+</body>
+</html>

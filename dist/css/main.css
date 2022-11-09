@@ -1,0 +1,302 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  font-family: "Roboto";
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.show {
+  transform: translateX(0);
+  opacity: 100;
+  visibility: visible;
+}
+
+header {
+  padding: 0.5em 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+}
+header .nav-logo {
+  font-size: 2em;
+  font-weight: bold;
+}
+header .menu {
+  display: block;
+}
+header nav {
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  position: absolute;
+  top: 0;
+  left: 0%;
+  transform: translateX(100vw);
+  transition: all 1s ease-in;
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+  height: 100%;
+  padding: 2em 2.5em;
+}
+header nav .menuclose {
+  align-self: flex-end;
+}
+header nav ul li {
+  z-index: 9999;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-align: center;
+  color: gray;
+}
+header nav ul li:hover {
+  cursor: pointer;
+  background-color: white;
+  transform: scale(1.2);
+}
+header nav ul li:hover a {
+  color: black;
+  font-weight: bold;
+}
+header nav .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  font-size: 1em;
+}
+header nav .buttons form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin: 0 auto;
+  border-radius: 3em;
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgb(255, 211, 15);
+  overflow: hidden;
+  border: none;
+}
+header nav .buttons input[type=search] {
+  border: none;
+  background: url("https://s2.svgbox.net/materialui.svg?ic=search");
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 14px;
+  color: black;
+  border-radius: inherit;
+  height: 2em;
+  width: 2em;
+}
+header nav .buttons input[type=search]:focus {
+  padding: 0.8em 2em;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100px;
+  background-color: black;
+  color: white;
+}
+header nav .buttons button[type=submit] {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 4px;
+  height: 2em;
+  width: 2em;
+  background-color: red;
+  padding: 0 !important;
+  margin: 0;
+  border-radius: inherit;
+  border: none !important;
+  cursor: pointer;
+  z-index: 100;
+}
+header nav .buttons button[type=submit]:hover {
+  opacity: 1;
+}
+header nav .buttons .createaccount {
+  text-transform: uppercase;
+  padding: 0.8em 2em;
+  font-size: 1em;
+}
+
+section {
+  width: 100vw;
+  padding: 5em 2em 0 2em;
+  text-align: center;
+  height: 100%;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+p {
+  max-width: 35em;
+  font-size: 0.8em;
+  line-height: 1.3em;
+  letter-spacing: 0.05em;
+  margin: 0 auto 2em auto;
+}
+
+button {
+  margin: 0 auto;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 25px;
+  padding: 0.5em 2em;
+  font-size: 1em;
+  font-weight: bold;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.hero {
+  position: relative;
+  top: 0;
+}
+.herobuttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.herobuttons .ordernow {
+  background-color: black;
+  color: white;
+}
+.herobuttons .ordernow:hover {
+  background-color: white;
+  color: black;
+}
+.hero img {
+  width: 100vw;
+  margin-top: 5em;
+  position: absolute;
+  left: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  header {
+    padding: 0.4em 5em 0.4em 5em;
+    padding-bottom: 0.4em;
+  }
+  header .menu {
+    display: none;
+  }
+  header nav {
+    width: 80%;
+    padding: 0;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-between;
+    align-self: center;
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  header nav .menuclose {
+    display: none;
+  }
+  header nav ul {
+    position: relative;
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    align-items: center;
+  }
+  header nav ul li {
+    font-size: 0.8em;
+    margin-bottom: 0;
+  }
+  header nav ul li a.active {
+    color: rgb(255, 211, 15);
+    padding: 0 0.5em;
+    padding-bottom: 1.4em;
+    border-bottom: 3px solid rgb(255, 211, 15);
+  }
+  header nav .buttons {
+    flex-direction: row;
+    font-size: 0.7em;
+  }
+  header nav .buttons .createaccount {
+    padding: 0 1em;
+    font-size: 1em;
+  }
+  section {
+    padding: 3em 5em;
+  }
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+  p {
+    max-width: 70em;
+  }
+  button {
+    border-radius: 45px;
+    font-size: 1em;
+    margin: 0;
+  }
+  .herobuttons {
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+  }
+  .hero img {
+    width: 60%;
+    margin-top: 2em;
+    position: relative;
+    left: 0;
+  }
+}
+.showbutton {
+  display: flex !important;
+}/*# sourceMappingURL=main.css.map */
